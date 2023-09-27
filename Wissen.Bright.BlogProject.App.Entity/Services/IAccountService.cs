@@ -11,6 +11,17 @@ namespace Wissen.Bright.BlogProject.App.Entity.Services
     {
         Task<string> CreateUserAsync(RegisterViewModel model);
         Task<string> FindByNameAsync(LoginViewModel model);
+
+        Task<string> CreateRoleAsync(RoleViewModel model);
+
+        Task<List<RoleViewModel>> GetAllRoles();
+
+        Task<RoleViewModel> FindByIdAsync(string id);
+
+        Task<UsersInOrOutViewModel> GetAllUsersWithRole(string id);
+
+        Task<string> EditRoleListAsync(EditRoleViewModel model);
+
         Task LogoutAsync();
     }
 }
