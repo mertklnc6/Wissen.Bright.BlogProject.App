@@ -17,7 +17,7 @@
 
                         <div class="col-lg-4 card">
                             <a asp-action="Details" asp-controller="Article" asp-route-id="@item.Id">
-                                <img src="~/themes/images/7.jpg" class="card-img-top img-fluid" alt="">
+                                <img src="@item.PictureUrl" class="card-img-top img-fluid" alt="">
                             </a>
                             <div class="card-body">
                                 <ul class="blog-icons my-4">
@@ -28,7 +28,7 @@
                                     </li>
                                     <li class="mx-2">
                                         <a href="#">
-                                            <i class="far fa-comment"></i> 21
+                                            <i class="far fa-comment"></i> 
                                         </a>
                                     </li>
                                     <li>

@@ -47,6 +47,10 @@ namespace Wissen.Bright.BlogProject.App.Service.Services
             return _mapper.Map<ArticleViewModel>(article);
         }
 
-
-    }
+		public async Task Add(ArticleViewModel articleViewModel)
+		{
+            await _uow.GetRepository<Article>().Add(_mapper.Map<Article>(articleViewModel));
+            _uow.Commit();
+		}
+	}
 }

@@ -25,7 +25,6 @@ namespace Wissen.Bright.BlogProject.App.Service.Services
             _signInManager = signInManager;
             _mapper = mapper;
         }
-
         public async Task<string> CreateRoleAsync(RoleViewModel model)
         {
             string message = string.Empty;
@@ -49,7 +48,6 @@ namespace Wissen.Bright.BlogProject.App.Service.Services
             }
             return message;
         }
-
         public async Task<string> CreateUserAsync(RegisterViewModel model)
         {
             string message = string.Empty;
@@ -108,16 +106,21 @@ namespace Wissen.Bright.BlogProject.App.Service.Services
             }
             return msg;
         }
-
-            public async Task<RoleViewModel> FindByIdAsync(string id)
+        public async Task<RoleViewModel> FindByIdAsync(string id)
 		{
             var role = await _roleManager.FindByIdAsync(id);
             return _mapper.Map<RoleViewModel>(role);
 		}
+        public async Task<UserViewModel> Find(string username)
+        {
+            var user = await _userManager.FindByNameAsync(username);
+            return _mapper.Map<UserViewModel>(user);
+        }
 
 
 		public async Task<string> FindByNameAsync(LoginViewModel model)
         {
+
             string message = string.Empty;
             var user = await _userManager.FindByNameAsync(model.Username);
             if(user == null)

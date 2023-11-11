@@ -24,3 +24,7 @@ namespace Wissen.Bright.BlogProject.App.Entity.Entities
 
     }
 }
+
+
+// Lazy Loading   (veri yükü baştan az, sonradan devamlı sql'den sorgu çekiyor. entity'ler virtual olmalı)
+// Eager Loading  (veri yükü başta fazla, ama sonradan tekrar tekrar sql'den sorgu çekmiyor. sorguda ilgili tablolar include ile eklenmeli)

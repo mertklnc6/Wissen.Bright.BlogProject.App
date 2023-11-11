@@ -7,10 +7,8 @@ using Wissen.Bright.BlogProject.App.Entity.ViewModels;
 
 namespace Wissen.Bright.BlogProject.App.Entity.Services
 {
-    public interface IArticleService
+    public interface ICategoryService
     {
-        Task<IEnumerable<ArticleViewModel>> GetAll();
-        Task<ArticleViewModel> Get(int id);
-        Task Add(ArticleViewModel articleViewModel);
+        Task<List<CategoryViewModel>> GetAll();
     }
 }

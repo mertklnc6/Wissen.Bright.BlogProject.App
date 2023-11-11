@@ -47,9 +47,19 @@ namespace Wissen.Bright.BlogProject.App.DataAccess.Repositories
                 _dbSet.Remove(entity);
             }
         }
-        public async Task<T> Get(Expression<Func<T, bool>> predicate)
+        public async Task<T> Get(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderby = null, params Expression<Func<T, object>>[] includes)
         {
-            return await _dbSet.FirstOrDefaultAsync(predicate);
+            IQueryable<T> query = _dbSet;
+            if (filter != null)
+                query = query.Where(filter);
+            if (orderby != null)
+                query = orderby(query);
+            foreach (var table in includes)
+            {
+                query = query.Include(table);
+            }
+
+            return await query.FirstOrDefaultAsync();
         }
         public async Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderby = null, params Expression<Func<T, object>>[] includes)
         {

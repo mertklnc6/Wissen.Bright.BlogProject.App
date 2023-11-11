@@ -13,7 +13,7 @@ namespace Wissen.Bright.BlogProject.App.Entity.Repositories
         Task<IEnumerable<T>> GetAllAsync();
         Task<T> GetById(int id);
 
-        Task<T> Get(Expression<Func<T, bool>> predicate);
+        Task<T> Get(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderby = null, params Expression<Func<T, object>>[] includes);
 
         Task Add(T entity);
         void Update(T entity);

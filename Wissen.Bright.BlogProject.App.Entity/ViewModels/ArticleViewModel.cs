@@ -13,9 +13,9 @@ namespace Wissen.Bright.BlogProject.App.Entity.ViewModels
         public string Summary { get; set; }
         public string Content { get; set; }
         public DateTime CreatedDate { get; set; }
-        //public string PictureUrl { get; set; }
+        public string PictureUrl { get; set; }
 
-        //public int CategoryId { get; set; }
-        //public int UserId { get; set; }
+        public int CategoryId { get; set; }
+        public int UserId { get; set; }
     }
 }

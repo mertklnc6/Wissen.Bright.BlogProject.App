@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Wissen.Bright.BlogProject.App.Entity.Services;
 using Wissen.Bright.BlogProject.App.Entity.ViewModels;
 
 namespace Wissen.Bright.BlogProject.App.WebMvcUI.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     public class RoleController : Controller
     {

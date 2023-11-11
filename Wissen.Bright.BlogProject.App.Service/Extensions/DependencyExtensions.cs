@@ -58,8 +58,11 @@ namespace Wissen.Bright.BlogProject.App.Service.Extensions
 			services.AddScoped<IUnitOfWorks, UnitOfWork>();
 			services.AddScoped<IArticleService, ArticleService>();
 			services.AddScoped(typeof(IAccountService), typeof(AccountService));
+			services.AddScoped<ITagService, TagService>();
+			services.AddScoped<ICommentService, CommentService>();
+            services.AddScoped<ICategoryService, CategoryService>();
 
-			services.AddAutoMapper(typeof(MappingProfile));
+            services.AddAutoMapper(typeof(MappingProfile));
 		}
 	}
 }

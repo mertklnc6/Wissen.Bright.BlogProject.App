@@ -18,8 +18,9 @@ namespace Wissen.Bright.BlogProject.App.Service.Mapping
             CreateMap<AppRole, RoleViewModel>().ReverseMap();
             CreateMap<AppUser, UserViewModel>().ReverseMap();
             CreateMap<AppUser, LoginViewModel>().ReverseMap();
-            
-
+            CreateMap<Tag, TagViewModel>().ReverseMap();
+            CreateMap<Comment, CommentViewModel>().ReverseMap();
+            CreateMap<Category, CategoryViewModel>().ReverseMap();
 
 		}
     }

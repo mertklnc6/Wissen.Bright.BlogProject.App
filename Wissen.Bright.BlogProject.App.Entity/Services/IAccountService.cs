@@ -21,7 +21,9 @@ namespace Wissen.Bright.BlogProject.App.Entity.Services
         Task<UsersInOrOutViewModel> GetAllUsersWithRole(string id);
 
         Task<string> EditRoleListAsync(EditRoleViewModel model);
+        Task<UserViewModel> Find(string username);
 
-        Task LogoutAsync();
+
+		Task LogoutAsync();
     }
 }
